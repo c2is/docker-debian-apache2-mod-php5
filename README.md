@@ -13,7 +13,7 @@ Warning for macosx and windows users : ip value should be changed according your
 ```
 # In your docker-compose.yml file
 c2isapachephp:
-    images: c2is/debian-apache2-mod-php5
+    image: c2is/debian-apache2-mod-php5
     ports:
         - 80:80
     environment:
