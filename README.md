@@ -4,7 +4,7 @@
 
 ##### Edit your /etc/hosts file and add the line:
 ```
-127.0.0.1 website.docker
+127.0.0.1 projectname.loc
 ```
 Host value could be changed according your choice below  
 Warning for macosx and windows users : ip value should be changed according your Docker's VM ip
