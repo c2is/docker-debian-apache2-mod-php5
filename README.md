@@ -6,7 +6,7 @@
 ```
 127.0.0.1 website.docker
 ```
-Host value could be changed according your choice below
+Host value could be changed according your choice below 
 Warning for macosx and windows users : ip value should be changed according your Docker's VM ip
 
 ##### With docker-compose (use image already built from docker's hub)
