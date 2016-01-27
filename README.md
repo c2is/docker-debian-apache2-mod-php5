@@ -2,7 +2,7 @@
 
 ### Usage 
 
-##### Edit your /etc/hosts file to add:
+##### Edit your /etc/hosts file and add the line:
 ```
 127.0.0.1 website.docker
 ```
