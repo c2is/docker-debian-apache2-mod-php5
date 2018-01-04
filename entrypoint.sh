@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
-rm /etc/apache2/sites-available/vhost-website.conf
+if [ -f /etc/apache2/sites-available/vhost-website.conf ]; then
+ rm /etc/apache2/sites-available/vhost-website.conf
+fi
 
 if [ -z "$WEBSITE_HOST" ]; then
 	WEBSITE_HOST="website.docker"
