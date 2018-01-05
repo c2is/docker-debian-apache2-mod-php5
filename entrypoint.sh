@@ -11,6 +11,27 @@ if [ "$SYMFONY_VHOST_COMPLIANT" == "yes" ]; then
 	SUFFIX="/web"
 fi
 
+if [ -f /etc/ssmtp/revaliases ]; then
+    rm /etc/ssmtp/revaliases
+fi
+if [ -f /etc/ssmtp/ssmtp.conf ]; then
+    rm /etc/ssmtp/ssmtp.conf
+fi
+
+cat <<EOF >> /etc/ssmtp/revaliases
+root:$SMTP_USER:$SMTP_HOST
+EOF
+
+cat <<EOF >> /etc/ssmtp/ssmtp.conf
+root=postmaster
+mailhub=$SMTP_HOST
+AuthUser=$SMTP_USER
+AuthPass=$SMTP_PASSWORD
+FromLineOverride=YES
+#Debug=YES
+hostname=docker.acti
+EOF
+
 cat <<EOF >> /etc/apache2/sites-available/vhost-website.conf
 <VirtualHost *:80>
         ServerName $WEBSITE_HOST

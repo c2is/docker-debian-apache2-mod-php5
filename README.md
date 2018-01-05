@@ -18,9 +18,13 @@ c2isapachephp:
         - 80:80
     environment:
         # Default: website.docker
-        WEBSITE_HOST: projectname.loc
+        - WEBSITE_HOST=projectname.loc
         # Default: no, DocumentRoot have not the trailing /web/
-        SYMFONY_VHOST_COMPLIANT: yes
+        - SYMFONY_VHOST_COMPLIANT="no"
+        - CERTIFICAT_CNAME=projectname.loc
+        - SMTP_HOST=mail.provider.com
+        - SMTP_USER=gunther@provider.com
+        - SMTP_PASSWORD=singingintherain
 ```
 
 ##### With docker directly
