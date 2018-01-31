@@ -20,6 +20,9 @@ RUN mkdir /var/composer
 RUN composer require symfony/var-dumper --working-dir=/var/composer
 RUN chown -R www-data:www-data /var/composer
 
+# Install git
+RUN apt-get update && apt-get install -y git
+
 ADD ports.conf /etc/apache2/ports.conf
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh
