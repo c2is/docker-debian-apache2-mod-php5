@@ -81,6 +81,3 @@ EOF
 openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=FR/ST=c2is/L=Lyon/O=c2is/CN=$CERTIFICAT_CNAME" -keyout /etc/apache2/ssl/ssl.key -out /etc/apache2/ssl/ssl.crt
 
 exec "$@"
-
-
-exec "$@"

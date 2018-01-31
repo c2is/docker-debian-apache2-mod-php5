@@ -12,6 +12,14 @@ RUN a2enmod rewrite
 RUN a2enmod ssl
 RUN a2enmod headers
 
+# Install composer
+RUN apt-get update && apt-get install -y curl
+RUN curl -s https://getcomposer.org/installer | php
+RUN mv composer.phar /usr/local/bin/composer
+RUN mkdir /var/composer
+RUN composer require symfony/var-dumper --working-dir=/var/composer
+RUN chown -R www-data:www-data /var/composer
+
 ADD ports.conf /etc/apache2/ports.conf
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 777 /entrypoint.sh
