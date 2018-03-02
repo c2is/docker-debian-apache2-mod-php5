@@ -78,8 +78,8 @@ cat <<EOF >> /etc/apache2/sites-available/vhost-website.conf
 </VirtualHost>
 EOF
 
-if [ "$CERTIFICAT_CNAME" != "" ]; then
- openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=FR/ST=c2is/L=Lyon/O=c2is/CN=$CERTIFICAT_CNAME" -keyout /etc/apache2/ssl/ssl.key -out /etc/apache2/ssl/ssl.crt
-fi
+#if [ "$CERTIFICAT_CNAME" != "" ]; then
+# openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj "/C=FR/ST=c2is/L=Lyon/O=c2is/CN=$CERTIFICAT_CNAME" -keyout /etc/apache2/ssl/ssl.key -out /etc/apache2/ssl/ssl.crt
+#fi
 
 exec "$@"
